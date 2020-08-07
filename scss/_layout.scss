@@ -1,0 +1,253 @@
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+}
+.container {
+  width: 1070px;
+  max-width: 100%;
+  padding: 0 15px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+[class$='__left'],
+[class$='__right'] {
+  width: 50%;
+}
+
+/* HEADER CSS */
+.header {
+  background: url(../images/bg-11.svg) no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  padding: 12rem 0;
+
+  &__right {
+    @include center;
+  }
+
+  &__img {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    color: var(--black-color);
+    p {
+      font-size: 2.8rem;
+      text-transform: capitalize;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 5.6rem;
+      font-weight: var(--fw-bolder);
+    }
+
+    span {
+      color: var(--red-color);
+      font-weight: var(--fw-bolder);
+    }
+  }
+}
+
+/* ABOUT CSS */
+.about {
+  &__left {
+    @include center;
+  }
+
+  &__text {
+    padding-right: 15px;
+
+    .btn {
+      margin-top: 1.5rem;
+    }
+  }
+  &__img {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/* INTRO CSS */
+.greeting {
+  background: url(../images/bg2.svg) no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  &__content {
+    text-align: center;
+    max-width: 70rem;
+    margin: auto;
+
+    span {
+      font-weight: var(--fw-boldest);
+      font-size: 2rem;
+    }
+
+    img {
+      width: 12rem;
+      margin: 2rem 0 4rem 0;
+    }
+  }
+}
+
+/* TECH SECTION CSS */
+.tech {
+  .section-heading {
+    text-align: center;
+  }
+
+  &__notification {
+    font-size: 12px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &__pgbars {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    .pgbar {
+      margin-bottom: 1.25rem;
+    }
+  }
+}
+
+/* TECH SECTION CSS */
+.other {
+  .section-heading {
+    text-align: center;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem 3rem;
+  }
+
+  &__item {
+    img {
+      display: block;
+      width: 20rem;
+      margin: auto;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: var(--black-color);
+  }
+}
+
+/* CONTACT SECTION CSS */
+.contact {
+  .section-heading {
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &__right {
+    @include center;
+  }
+
+  &__details {
+    text-align: center;
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__btns {
+    a {
+      margin: 0 1rem;
+    }
+    ion-icon {
+      font-size: 2.5rem;
+      vertical-align: middle;
+    }
+  }
+}
+
+/* CONTACT SECTION CSS */
+
+.thanks {
+  background: url(../images/bg.svg) no-repeat;
+  background-attachment: fixed;
+  &__content {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+
+    img {
+      width: 70%;
+    }
+
+    p:nth-of-type(2) {
+      color: var(--red-color);
+      font-size: 3.5rem;
+      font-weight: var(--fw-boldest);
+      margin: 2rem 0;
+    }
+  }
+}
+
+/* FOOTER SECTION CSS */
+.footer {
+  padding: 6.5rem 0;
+  text-align: center;
+
+  a {
+    color: var(--blue-color);
+    font-size: 1.75rem;
+  }
+
+  ion-icon {
+    font-size: 2.5rem;
+    vertical-align: middle;
+  }
+
+  &__left,
+  &__mid,
+  &__right {
+    width: 33.333%;
+  }
+
+  &__sources {
+    li {
+      padding: 0.5rem 0;
+    }
+
+    li:first-child {
+      color: var(--red-color);
+      font-size: 2rem;
+    }
+  }
+
+  &__individual {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+  }
+
+  &__copyright {
+    font-size: 1rem;
+    color: var(--blue-color);
+    margin-top: 2rem;
+  }
+}

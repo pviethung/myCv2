@@ -1,0 +1,52 @@
+/**** VARIABLES ****/
+:root {
+  --fw-bold: 500;
+  --fw-bolder: 600;
+  --fw-boldest: 700;
+
+  --blue-color: #6c63ff;
+  --red-color: #ff6584;
+  --black-color: #2e293b;
+  --white-color: #fff;
+  --black-opacity: rgba(46, 41, 59, 0.6); // black with opacity
+}
+
+/**** RESET ****/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  letter-spacing: 1px;
+}
+
+section {
+  padding: 6.5rem 0;
+}
+
+/**** MIXINS ****/
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

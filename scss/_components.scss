@@ -1,0 +1,63 @@
+/**** COMPONENTS ****/
+.btn {
+  display: inline-block;
+  min-width: 15rem;
+  padding: 1rem 3rem;
+
+  font-size: 1.5rem;
+  text-align: center;
+
+  &--blue {
+    color: var(--blue-color);
+    border-bottom: 5px solid currentColor;
+  }
+
+  &--red {
+    color: var(--red-color);
+    border-bottom: 5px solid currentColor;
+  }
+
+  &--fillred {
+    color: var(--white-color);
+    background: var(--red-color);
+    border-radius: 5px;
+  }
+
+  &--fillblue {
+    color: var(--white-color);
+    background: var(--blue-color);
+    border-radius: 5px;
+  }
+}
+
+.section-heading {
+  margin-bottom: 2.5rem;
+
+  color: var(--blue-color);
+  font-size: 4.6rem;
+  font-weight: var(--fw-bolder);
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.section-description {
+  color: var(--black-opacity);
+  font-size: 1.75rem;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+}
+
+.pgbar {
+  width: 70%;
+  height: 20px;
+  border: 1px solid var(--black-opacity);
+  border-radius: 5px;
+
+  &__percent {
+    width: 50%;
+    height: 100%;
+    background: var(--blue-color);
+  }
+}
+
+/**** ANIMATIONS ****/
