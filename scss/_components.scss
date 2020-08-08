@@ -54,9 +54,15 @@
   border-radius: 5px;
 
   &__percent {
-    width: 50%;
+    width: 0;
     height: 100%;
+
     background: var(--blue-color);
+    transition: width 1s;
+  }
+
+  &.active &__percent {
+    width: 50%;
   }
 }
 
@@ -64,19 +70,117 @@
   position: fixed;
   top: 50%; // 15px + 17px scrolblar
   left: 15px;
-  transform: translateY(-50%);
 
   text-align: center;
   border-radius: 5px;
-  overflow: hidden;
+
+  transform: translate(-13rem, -50%);
+  transition: transform 0.5s;
+
+  &.active {
+    transform: translate(0, -50%);
+  }
+
+  li:first-child > a {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  li:last-child > a {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 
   a {
     display: inline-block;
     width: 100%;
     padding: 1rem 2rem;
+    font-size: 1.5rem;
+
     color: var(--white-color);
+    background: linear-gradient(
+      to right,
+      var(--blue-color) 50%,
+      var(--white-color) 50%
+    );
+    background-size: 200%;
+    transition: background 1s, color 1s;
+  }
+
+  li.active > a {
+    background-position: 100%;
+    color: var(--blue-color);
+  }
+
+  &__btn {
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    width: 3rem;
+    height: 3rem;
+    padding: 0 5px;
+    border-radius: 5px;
+
+    position: absolute;
+    right: -3.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
     background: var(--blue-color);
+
+    span {
+      display: block;
+      width: 80%;
+      height: 2px;
+      margin: 0 auto;
+      border-radius: 5px;
+
+      background: var(--white-color);
+      transition: transform 0.5s;
+    }
+  }
+
+  &__btn.close {
+    background: var(--red-color);
+    display: block;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 3px;
+    }
+
+    span:nth-of-type(1) {
+      display: none;
+    }
+
+    span:nth-of-type(2) {
+      transform: rotate(225deg);
+    }
+
+    span:nth-of-type(3) {
+      transform: rotate(-225deg);
+    }
   }
 }
 
 /**** ANIMATIONS ****/
+
+@keyframes moveUp {
+  from {
+    transform: translateY(5rem);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveUpSlow {
+  to {
+    transform: translateY(-18rem);
+  }
+}

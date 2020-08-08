@@ -19,12 +19,22 @@
 
 
             <!-- content -->
-            <nav class="navigation">
+            <nav class="navigation active">
                 <ul>
-                    <li><a href="">dsadas</a></li>
-                    <li><a href="">dsda</a></li>
-                    <li><a href="">dsdas</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#greeting">Greeting</a></li>
+                    <li><a href="#tech">Tech skills</a></li>
+                    <li><a href="#other">Other skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#thanks">
+                            <ion-icon name="heart"></ion-icon>
+                        </a></li>
                 </ul>
+                <div class="navigation__btn close">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
             <!-- header -->
             <header class="header">
@@ -47,7 +57,7 @@
             <main>
 
                 <!-- about -->
-                <section class="about">
+                <section class="about" id="about">
                     <div class="container row">
                         <div class="about__left">
                             <div class="about__text">
@@ -76,11 +86,14 @@
                 </section>
 
                 <!-- greeting -->
-                <section class="greeting">
+                <section class="greeting" id="greeting">
                     <div class="container">
                         <div class="greeting__content">
                             <h2 class="section-heading">hi.</h2>
-                            <img src="./images/profile.svg" alt="">
+                            <div class="greeting__imgs">
+                                <img src="./images/profile.svg" alt="">
+                                <img src="./images/pc.svg" alt="">
+                            </div>
                             <p class="section-description">
                                 My full name is <span> Pham Viet Hung </span>, I'm 23 years old. I have just
                                 graduated
@@ -96,7 +109,7 @@
                 </section>
 
                 <!-- tech skills -->
-                <section class="tech">
+                <section class="tech" id="tech">
                     <h2 class="section-heading">
                         technical skills
                     </h2>
@@ -143,7 +156,7 @@
                 </section>
 
                 <!-- other skills -->
-                <section class="other">
+                <section class="other" id="other">
                     <h2 class="section-heading">other skills</h2>
                     <div class="container">
                         <div class="other__gallery">
@@ -175,7 +188,7 @@
 
 
                 <!-- contact -->
-                <section class="contact">
+                <section class="contact" id="contact">
                     <div class="section-heading">contact me</div>
                     <div class="container row">
                         <div class="contact__left">
@@ -201,7 +214,7 @@
 
 
                 <!-- thanks -->
-                <section class="thanks">
+                <section class="thanks" id="thanks">
                     <div class="container">
                         <div class="thanks__content">
                             <h2 class="section-heading">
@@ -267,6 +280,9 @@
         </div>
     </div>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="./js/waypoints.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 

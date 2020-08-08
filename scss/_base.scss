@@ -11,6 +11,31 @@
   --black-opacity: rgba(46, 41, 59, 0.6); // black with opacity
 }
 
+/**** MIXINS ****/
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin responsiveForMedium {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin responsiveForSmall {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin responsiveForXSmall {
+  @media only screen and (max-width: 576px) {
+    @content;
+  }
+}
+
 /**** RESET ****/
 *,
 *::before,
@@ -22,6 +47,10 @@
 
 html {
   font-size: 62.5%;
+
+  @include responsiveForMedium() {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -42,11 +71,4 @@ p {
 
 section {
   padding: 6.5rem 0;
-}
-
-/**** MIXINS ****/
-@mixin center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
