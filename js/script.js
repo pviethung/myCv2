@@ -75,8 +75,8 @@ const progressBarRun = () => {
 }
 
 const run = () => {
-  showNav()
   makeWaypoint()
+  showNav()
 }
 
 run()

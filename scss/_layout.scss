@@ -69,6 +69,7 @@ body {
 
   &__text {
     color: var(--black-color);
+
     p {
       font-size: 2.8rem;
       text-transform: capitalize;
@@ -79,6 +80,11 @@ body {
       letter-spacing: 5px;
       font-size: 5.6rem;
       font-weight: var(--fw-bolder);
+
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 1rem solid var(--black-color);
+      animation: typing 3.5s steps(40, end), cursor 0.75s step-end infinite;
     }
 
     span {
@@ -227,22 +233,65 @@ body {
   &__gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem 3rem;
+    gap: 5rem 10rem;
+    grid-auto-rows: 21rem;
   }
 
   &__item {
-    img {
-      display: block;
-      width: 20rem;
-      margin: auto;
+    position: relative;
+    perspective: 120rem;
+
+    &:hover .other__img {
+      transform: translateX(-50%) rotateY(180deg);
+    }
+
+    &:hover .other__details {
+      transform: translateX(-50%) rotateY(360deg);
     }
   }
 
-  &__title {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 2rem;
-    color: var(--black-color);
+  &__img,
+  &__details {
+    cursor: pointer;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 25rem;
+    height: 100%;
+
+    transition: transform 1s;
+    backface-visibility: hidden;
+  }
+
+  &__img {
+    transform: translateX(-50%) rotateY(0);
+    img {
+      display: block;
+      width: 90%;
+      margin: auto;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.9rem;
+      margin-top: 1rem;
+      color: var(--black-color);
+    }
+  }
+
+  &__details {
+    background: var(--blue-color);
+    border-radius: 5px;
+    padding: 2.5rem;
+
+    transform: translateX(-50%) rotateY(180deg);
+
+    p {
+      color: var(--white-color);
+      font-size: 1.5rem;
+    }
   }
 
   /*other responsive*/
@@ -311,6 +360,7 @@ body {
 
     img {
       width: 70%;
+      animation: scaleUp 1s linear alternate infinite;
     }
 
     p:nth-of-type(2) {

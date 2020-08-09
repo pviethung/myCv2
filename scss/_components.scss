@@ -3,9 +3,49 @@
   display: inline-block;
   min-width: 15rem;
   padding: 1rem 3rem;
+  position: relative;
 
   font-size: 1.5rem;
   text-align: center;
+
+  transition: all 0.3s;
+
+  &:hover {
+    padding-right: 4rem;
+    padding-left: 4rem;
+
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 2px 0px var(--black-opacity);
+
+    .btn__right-arr {
+      right: 0;
+      background: rgba(46, 41, 59, 0.1);
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 2px 0px var(--black-opacity);
+  }
+
+  &__right-arr {
+    position: absolute;
+    right: 5%;
+    top: 0;
+
+    width: 15%;
+    height: 100%;
+
+    opacity: 0;
+    transform-origin: left;
+    transition: all 0.5s; // opacity - bg - right transition
+    @include center;
+
+    ion-icon {
+      font-size: 2rem;
+    }
+  }
 
   &--blue {
     color: var(--blue-color);
@@ -21,12 +61,14 @@
     color: var(--white-color);
     background: var(--red-color);
     border-radius: 5px;
+    overflow: hidden;
   }
 
   &--fillblue {
     color: var(--white-color);
     background: var(--blue-color);
     border-radius: 5px;
+    overflow: hidden;
   }
 }
 
@@ -66,10 +108,12 @@
   }
 }
 
+/* nav css*/
 .navigation {
   position: fixed;
   top: 50%; // 15px + 17px scrolblar
   left: 15px;
+  z-index: 9;
 
   text-align: center;
   border-radius: 5px;
@@ -127,8 +171,8 @@
     position: absolute;
     right: -3.5rem;
     top: 50%;
-    transform: translateY(-50%);
 
+    transform: translateY(-50%);
     background: var(--blue-color);
 
     span {
@@ -182,5 +226,30 @@
 @keyframes moveUpSlow {
   to {
     transform: translateY(-18rem);
+  }
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes cursor {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-black);
   }
 }
