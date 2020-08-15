@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>A Curriculum Vitae</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./scss/main.scss">
 
@@ -21,20 +21,110 @@
             <!-- content -->
             <nav class="navigation active">
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#greeting">Greeting</a></li>
-                    <li><a href="#tech">Tech skills</a></li>
-                    <li><a href="#other">Other skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#thanks">
+                    <li>
+                        <a href="#about">
+                            <ion-icon name="home"></ion-icon>
+                        </a>
+                        <p>about me</p>
+                    </li>
+                    <li>
+                        <a href="#greeting">
+                            <ion-icon name="hand-right"></ion-icon>
+                        </a>
+                        <p>hi there</p>
+                    </li>
+                    <li>
+                        <a href="#tech">
+                            <ion-icon name="build"></ion-icon>
+                        </a>
+                        <p>Technical skills</p>
+                    </li>
+                    <li>
+                        <a href="#other">
+                            <ion-icon name="chatbubble-ellipses"></ion-icon>
+                        </a>
+                        <p>other skills</p>
+                    </li>
+                    <li>
+                        <a href="#portfolio">
+                            <ion-icon name="briefcase"></ion-icon>
+                        </a>
+                        <p>projects</p>
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <ion-icon name="mail-open"></ion-icon>
+                        </a>
+                        <p>contact</p>
+                    </li>
+                    <li>
+                        <a href="#thanks">
                             <ion-icon name="heart"></ion-icon>
-                        </a></li>
+                        </a>
+                    </li>
                 </ul>
-                <div class="navigation__btn close">
+                <!-- <div class="navigation__btn close">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </div> -->
+            </nav>
+
+            <nav class="navigation--small">
+                <ul>
+                    <li>
+                        <a href="#about">
+                            <ion-icon name="home"></ion-icon>
+                            <span>about me</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#greeting">
+                            <ion-icon name="hand-right"></ion-icon>
+                            <span>hi there</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#tech">
+                            <ion-icon name="build"></ion-icon>
+                            <span>Technical skills</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#other">
+                            <ion-icon name="chatbubble-ellipses"></ion-icon>
+                            <span>other skills</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#portfolio">
+                            <ion-icon name="briefcase"></ion-icon>
+                            <span>projects</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#contact">
+                            <ion-icon name="mail-open"></ion-icon>
+                            <span>contact</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#thanks">
+                            <ion-icon name="heart"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="javascript:void(0)" class="navigation--small__btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
             </nav>
             <!-- header -->
             <header class="header">
@@ -218,9 +308,59 @@
 
 
                 <!-- portfolio -->
-                <!-- <section class="portfolio">
+                <section class="portfolio" id="portfolio">
+                    <h2 class="section-heading">Projects</h2>
+                    <div class="container row">
+                        <div class="portfolio__item">
+                            <figure class="portfolio__img">
+                                <img src="./images/voyage.PNG" alt="voyage">
+                                <figcaption>
+                                    <h3>voyage</h3>
+                                    <a href="https://hungxu97.github.io/voyage/" target="_blank"
+                                        class="btn btn--white">Demo
+                                        <div class="btn__right-arr">
+                                            <ion-icon name="exit-outline"></ion-icon>
+                                        </div>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="portfolio__item">
+                            <figure class="portfolio__img">
+                                <img src="./images/fb-hp-clone.PNG" alt="fbclone">
+                                <figcaption>
+                                    <h3>facebook homepage</h3>
+                                    <a href="https://hungxu97.github.io/voyage/" target="_blank"
+                                        class="btn btn--white">Demo
+                                        <div class="btn__right-arr">
+                                            <ion-icon name="exit-outline"></ion-icon>
+                                        </div>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="portfolio__item">
+                            <figure class="portfolio__img">
+                                <img src="./images/voyage.PNG" alt="voyage">
+                            </figure>
+                        </div>
+                        <div class="portfolio__item">
+                            <figure class="portfolio__img">
+                                <img src="./images/voyage.PNG" alt="voyage">
+                            </figure>
+                        </div>
+                    </div>
 
-            </section> -->
+                    <div style="text-align: center; margin-top: 5rem;">
+                        <a href="https://github.com/hungxu97/" target="_blank" class="btn btn--blue">View
+                            Github repositories
+                            <div class="btn__right-arr">
+                                <ion-icon name="chevron-forward-outline"></ion-icon>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
 
 
                 <!-- contact -->
@@ -323,7 +463,6 @@
     </div>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <script src="./js/waypoints.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
     <script src="./js/script.js"></script>
 
 </body>

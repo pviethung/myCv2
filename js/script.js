@@ -1,4 +1,4 @@
-// dung thu vien waypoint quan ly su kien scroll
+// scrollSpy with Waypoint library
 const makeWaypoint = () => {
   const main = document.querySelector('main')
 
@@ -26,20 +26,25 @@ const makeWaypoint = () => {
   })
 }
 
+// make scrollspy for every section in main
 const scrollSpy = (className) => {
-  // the <a>
-  let navLink = document.querySelector(`a[href="#${className}"]`)
+  let navLink = document.querySelectorAll(`a[href="#${className}"]`)
+  let smallNavBtn = document.querySelector('.navigation--small__btn')
+  let smallNavList = document.querySelector('.navigation--small > ul')
 
-  // the <li>
-  let navItem = navLink.parentElement
+  navLink.forEach((link) => {
+    let navItem = link.parentElement
+    navItem.classList.add('active')
+    smallNavList.classList.remove('active')
+    smallNavBtn.classList.remove('opened')
 
-  // them class cho the <li> tuong ung voi section da scroll toi
-  navItem.classList.add('active')
-  siblingsElements(navItem).forEach((item) => {
-    item.classList.remove('active')
+    siblingsElements(navItem).forEach((item) => {
+      item.classList.remove('active')
+    })
   })
 }
 
+// find siblings of given element
 const siblingsElements = (elm) => {
   let siblings = []
   let firstChild = elm.parentElement.firstElementChild
@@ -54,16 +59,17 @@ const siblingsElements = (elm) => {
   return siblings
 }
 
-const showNav = () => {
-  const nav = document.querySelector('.navigation')
-  const btn = document.querySelector('.navigation__btn')
+// const showNav = () => {
+//   const nav = document.querySelector('.navigation')
+//   const btn = document.querySelector('.navigation__btn')
 
-  btn.addEventListener('click', (e) => {
-    nav.classList.toggle('active')
-    btn.classList.toggle('close')
-  })
-}
+//   btn.addEventListener('click', (e) => {
+//     nav.classList.toggle('active')
+//     btn.classList.toggle('close')
+//   })
+// }
 
+// animate progessbar
 const progressBarRun = () => {
   const pgbar = document.querySelectorAll('.pgbar')
 
@@ -74,9 +80,22 @@ const progressBarRun = () => {
   }
 }
 
+// animate navgation bar in small device
+const toggleSmallNav = () => {
+  let btn = document.querySelector('.navigation--small__btn')
+  let list = document.querySelector('.navigation--small > ul')
+
+  btn.addEventListener('click', () => {
+    list.classList.toggle('active')
+    btn.classList.toggle('opened')
+  })
+}
+
+// main fucntion
 const run = () => {
   makeWaypoint()
-  showNav()
+  toggleSmallNav()
+  // showNav()
 }
 
 run()

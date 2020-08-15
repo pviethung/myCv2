@@ -9,6 +9,7 @@
   --black-color: #2e293b;
   --white-color: #fff;
   --black-opacity: rgba(46, 41, 59, 0.6); // black with opacity
+  --box-shadow: 0 0px 5px var(--black-opacity);
 }
 
 /**** MIXINS ****/
@@ -71,4 +72,12 @@ p {
 
 section {
   padding: 6.5rem 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
 }
