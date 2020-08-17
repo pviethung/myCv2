@@ -19,6 +19,18 @@
   justify-content: center;
 }
 
+@mixin responsiveForXLarge {
+  @media only screen and (min-width: 1201px) {
+    @content;
+  }
+}
+
+@mixin responsiveForLarge {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
 @mixin responsiveForMedium {
   @media only screen and (max-width: 992px) {
     @content;
@@ -49,7 +61,7 @@
 html {
   font-size: 62.5%;
 
-  @include responsiveForMedium() {
+  @include responsiveForMedium {
     font-size: 50%;
   }
 }

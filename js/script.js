@@ -1,27 +1,67 @@
 // scrollSpy with Waypoint library
+// make waypoints for every section in main
 const makeWaypoint = () => {
+  // header
+  new Waypoint({
+    element: document.querySelector('.header'),
+    handler: function (direction) {
+      if (direction === 'down') {
+        scrollSpy(this.element.className)
+      }
+    },
+    offset: 100,
+  })
+
+  new Waypoint({
+    element: document.querySelector('.header'),
+    handler: function (direction) {
+      if (direction === 'up') {
+        scrollSpy(this.element.className)
+      }
+    },
+    offset: -100,
+  })
+
+  // main sections
   const main = document.querySelector('main')
 
   Array.from(main.children).forEach((child) => {
-    new Waypoint({
-      element: child,
-      handler: function (direction) {
-        if (direction === 'down') {
-          scrollSpy(this.element.className)
-          //
-          if (this.element.className === 'tech') {
-            progressBarRun()
+    if (child.className !== 'about') {
+      new Waypoint({
+        element: child,
+        handler: function (direction) {
+          if (direction === 'down') {
+            scrollSpy(this.element.className)
+            //
+            if (this.element.className === 'tech') {
+              progressBarRun()
+            }
           }
-        }
-      },
-      offset: 20,
-    })
+        },
+        offset: 100,
+      })
+      new Waypoint({
+        element: child,
+        handler: function (direction) {
+          if (direction === 'up') scrollSpy(this.element.className)
+        },
+        offset: -100,
+      })
+    }
+  })
+}
+
+const fade = () => {
+  let elms = document.querySelectorAll('[class*=fade-]')
+  console.log(elms)
+
+  elms.forEach((elm) => {
     new Waypoint({
-      element: child,
-      handler: function (direction) {
-        if (direction === 'up') scrollSpy(this.element.className)
+      element: elm,
+      handler: function () {
+        this.element.classList.add('active')
       },
-      offset: -20,
+      offset: 500,
     })
   })
 }
@@ -95,6 +135,7 @@ const toggleSmallNav = () => {
 const run = () => {
   makeWaypoint()
   toggleSmallNav()
+  fade()
   // showNav()
 }
 

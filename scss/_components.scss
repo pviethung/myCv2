@@ -78,14 +78,15 @@
 }
 
 .section-heading {
+  position: relative;
   text-align: center;
   margin-bottom: 2.5rem;
 
   color: var(--blue-color);
-  font-size: 4.6rem;
-  font-weight: var(--fw-bolder);
+  font-size: 5rem;
+  font-weight: var(--fw-boldest);
   letter-spacing: 2px;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .section-description {
@@ -93,6 +94,21 @@
   font-size: 1.75rem;
   line-height: 1.8;
   letter-spacing: 0.5px;
+}
+
+.section-heading-shadow {
+  position: absolute;
+  top: -4rem;
+  left: 50%;
+  z-index: -1;
+
+  font-size: 10rem;
+  font-weight: var(--fw-boldest);
+  text-transform: uppercase;
+
+  transform: translateX(-50%);
+  color: var(--black-opacity);
+  opacity: 0.2;
 }
 
 .pgbar {
@@ -118,7 +134,7 @@
 .navigation {
   position: fixed;
   top: 50%;
-  left: 15px;
+  left: 10px;
   z-index: 9;
 
   text-align: center;
@@ -200,7 +216,7 @@
   display: none;
   position: fixed;
   z-index: 9;
-  padding: 1rem 0;
+  padding: 2rem 0;
   width: 100%;
 
   box-shadow: var(--box-shadow);
@@ -286,7 +302,63 @@
   }
 }
 
+.form {
+  &__control {
+    margin-bottom: 2rem;
+
+    & > * {
+      border-radius: 20px;
+      border: 1px solid var(--black-opacity);
+      outline: none;
+      width: 100%;
+      padding: 1.5rem 2rem;
+
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+
+      &:placeholder-shown {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
 /**** ANIMATIONS ****/
+
+.fade-right,
+.fade-up,
+.fade-left {
+  opacity: 0;
+  transition: all 1.5s;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.fade-up {
+  transform: translateY(60%);
+
+  &.active {
+    transform: translateY(0);
+  }
+}
+
+.fade-left {
+  transform: translateX(-50%);
+
+  &.active {
+    transform: translateX(0);
+  }
+}
+
+.fade-right {
+  transform: translateX(50%);
+
+  &.active {
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveUp {
   from {

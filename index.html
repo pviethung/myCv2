@@ -22,10 +22,10 @@
             <nav class="navigation active">
                 <ul>
                     <li>
-                        <a href="#about">
+                        <a href="#header">
                             <ion-icon name="home"></ion-icon>
                         </a>
-                        <p>about me</p>
+                        <p>home</p>
                     </li>
                     <li>
                         <a href="#greeting">
@@ -57,25 +57,16 @@
                         </a>
                         <p>contact</p>
                     </li>
-                    <li>
-                        <a href="#thanks">
-                            <ion-icon name="heart"></ion-icon>
-                        </a>
-                    </li>
+
                 </ul>
-                <!-- <div class="navigation__btn close">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div> -->
             </nav>
 
             <nav class="navigation--small">
                 <ul>
                     <li>
-                        <a href="#about">
+                        <a href="#header">
                             <ion-icon name="home"></ion-icon>
-                            <span>about me</span>
+                            <span>home</span>
                         </a>
                     </li>
                     <li>
@@ -113,11 +104,7 @@
                         </a>
 
                     </li>
-                    <li>
-                        <a href="#thanks">
-                            <ion-icon name="heart"></ion-icon>
-                        </a>
-                    </li>
+
                 </ul>
 
                 <a href="javascript:void(0)" class="navigation--small__btn">
@@ -127,7 +114,7 @@
                 </a>
             </nav>
             <!-- header -->
-            <header class="header">
+            <header class="header" id="header">
                 <div class="container row">
                     <div class="header__left">
                         <div class="header__img">
@@ -142,20 +129,24 @@
                         </div>
                     </div>
                 </div>
+                <a href="#about" class="header__btn">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </a>
             </header>
 
             <main>
 
                 <!-- about -->
                 <section class="about" id="about">
-                    <div class="container row">
+                    <div class="container row fade-up">
                         <div class="about__left">
                             <div class="about__text">
                                 <h2 class="section-heading">
                                     about this website
                                 </h2>
                                 <p class="section-description">
-                                    This website was created to serve my job search. I designed it myself It is
+                                    This website was created to serve my job seeking. I designed it myself. It is
                                     inspired
                                     by
                                     various
@@ -181,9 +172,11 @@
 
                 <!-- greeting -->
                 <section class="greeting" id="greeting">
-                    <div class="container">
+                    <div class="container fade-up">
                         <div class="greeting__content">
-                            <h2 class="section-heading">hi.</h2>
+                            <h2 class="section-heading">me.
+                                <p class="section-heading-shadow">about</p>
+                            </h2>
                             <div class="greeting__imgs">
                                 <img src="./images/profile.svg" alt="">
                                 <img src="./images/pc.svg" alt="">
@@ -199,17 +192,50 @@
                                 <span>learn new things </span>and willing to <span> work in team</span>.
                             </p>
                         </div>
+
+                        <div class="greeting__info row">
+                            <ul class="greeting__list">
+                                <li>
+                                    <ion-icon name="calendar"></ion-icon>
+                                    <span>Birthda:y</span> 12/11/1997
+                                </li>
+                                <li>
+                                    <ion-icon name="person"></ion-icon>
+                                    <span>gender:</span> nam
+                                </li>
+                                <li>
+                                    <ion-icon name="call"></ion-icon>
+                                    <span>phone:</span> 033947xxxx
+                                </li>
+                            </ul>
+                            <ul class="greeting__list">
+                                <li>
+                                    <ion-icon name="mail"></ion-icon>
+                                    <span>email:</span> email@example.com
+                                </li>
+                                <li>
+                                    <ion-icon name="location"></ion-icon>
+                                    <span>location:</span> binh thanh, ho chi minh city
+                                </li>
+                                <li>
+                                    <ion-icon name="calendar"></ion-icon>
+                                    <span>phone:</span> 033947xxxx
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
+
                 <!-- tech skills -->
                 <section class="tech" id="tech">
-                    <h2 class="section-heading">
-                        technical skills
+                    <h2 class="section-heading fade-up">
+                        <p class="section-heading-shadow">technical </p>
+                        skills
                     </h2>
-                    <div class="container row">
+                    <div class="container row" style="align-items: center;">
                         <div class="tech__left">
-                            <div class="tech__pgbars">
+                            <div class="tech__pgbars fade-left">
                                 HTML/CSS
                                 <div class="pgbar">
                                     <div class="pgbar__percent"></div>
@@ -242,7 +268,7 @@
                                     cv (link at the footer section)</em></p>
                         </div>
                         <div class="tech__right">
-                            <div class="tech__img">
+                            <div class="tech__img fade-right">
                                 <img src="./images/abilities.svg" alt="skills">
                             </div>
                         </div>
@@ -251,10 +277,13 @@
 
                 <!-- other skills -->
                 <section class="other" id="other">
-                    <h2 class="section-heading">other skills</h2>
+                    <h2 class="section-heading">skills
+                        <p class="section-heading-shadow">other</p>
+
+                    </h2>
                     <div class="container">
                         <div class="other__gallery">
-                            <div class="other__item">
+                            <div class="other__item fade-up">
                                 <div class="other__details">
                                     <p>
                                         I have the ability to work independently, just give me the job, i will try to
@@ -267,7 +296,7 @@
 
                             </div>
 
-                            <div class="other__item">
+                            <div class="other__item fade-up">
                                 <div class="other__details">
                                     <p>
                                         I have good teamwork skills,
@@ -278,7 +307,7 @@
                                     <p>Team-working</p>
                                 </div>
                             </div>
-                            <div class="other__item">
+                            <div class="other__item fade-up">
                                 <div class="other__details">
                                     <p>
                                         I can read professional document in English,
@@ -289,7 +318,7 @@
                                     <p>English</p>
                                 </div>
                             </div>
-                            <div class="other__item">
+                            <div class="other__item fade-up">
                                 <div class="other__details">
                                     <p>
                                         I'm an introvert but I always know how to listen and convey my point of view to
@@ -309,9 +338,12 @@
 
                 <!-- portfolio -->
                 <section class="portfolio" id="portfolio">
-                    <h2 class="section-heading">Projects</h2>
+                    <h2 class="section-heading">Projects
+                        <p class="section-heading-shadow">works</p>
+
+                    </h2>
                     <div class="container row">
-                        <div class="portfolio__item">
+                        <div class="portfolio__item fade-left">
                             <figure class="portfolio__img">
                                 <img src="./images/voyage.PNG" alt="voyage">
                                 <figcaption>
@@ -325,7 +357,7 @@
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="portfolio__item">
+                        <div class="portfolio__item fade-right">
                             <figure class="portfolio__img">
                                 <img src="./images/fb-hp-clone.PNG" alt="fbclone">
                                 <figcaption>
@@ -339,12 +371,12 @@
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="portfolio__item">
+                        <div class="portfolio__item fade-left">
                             <figure class="portfolio__img">
                                 <img src="./images/voyage.PNG" alt="voyage">
                             </figure>
                         </div>
-                        <div class="portfolio__item">
+                        <div class="portfolio__item fade-right">
                             <figure class="portfolio__img">
                                 <img src="./images/voyage.PNG" alt="voyage">
                             </figure>
@@ -352,8 +384,8 @@
                     </div>
 
                     <div style="text-align: center; margin-top: 5rem;">
-                        <a href="https://github.com/hungxu97/" target="_blank" class="btn btn--blue">View
-                            Github repositories
+                        <a href="https://github.com/hungxu97/" target="_blank" class="btn btn--blue">
+                            More in my repos...
                             <div class="btn__right-arr">
                                 <ion-icon name="chevron-forward-outline"></ion-icon>
                             </div>
@@ -362,21 +394,47 @@
                 </section>
 
 
-
                 <!-- contact -->
                 <section class="contact" id="contact">
-                    <div class="section-heading">contact me</div>
+                    <h2 class="section-heading fade-up">get in touch
+                        <p class="section-heading-shadow">contact</p>
+
+                    </h2>
                     <div class="container row">
                         <div class="contact__left">
-                            <img src="./images/contact.svg" alt="contact">
+                            <div class="form  fade-up">
+                                <div class="form__control">
+                                    <input type="text" placeholder="your name">
+                                </div>
+                                <div class="form__control">
+                                    <input type="text" placeholder="your email">
+                                </div>
+                                <div class="form__control">
+                                    <input type="text" placeholder="your subject">
+                                </div>
+                                <div class="form__control">
+                                    <textarea cols="30" rows="7" placeholder="your message"></textarea>
+                                </div>
+                                <div class="form__btn">
+                                    <a href="javascript:void(0)" class="btn btn--fillblue">
+                                        Send Message
+                                        <div class="btn__right-arr">
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="contact__right">
-                            <div class="contact__details">
-                                <p class="section-description">I am currently looking for a job.
-                                    <br> Contact me via</p>
+                            <div class="contact__details fade-up">
+                                <div class="contact__text">
+                                    <h3>hire me!</h3>
+                                    <p class="section-description">I am currently looking for a job.
+                                        <br> Feel free to get in touch with me</p>
+                                </div>
                                 <div class="contact__btns">
-                                    <a href="javascript:void(0)" class="btn btn--fillred">
-                                        <ion-icon name="mail"></ion-icon> My Email
+                                    <a href="mailto:email@example.com" class="btn btn--fillred">
+                                        <ion-icon name="mail"></ion-icon> Mail Me
                                         <div class="btn__right-arr">
                                             <ion-icon name="chevron-forward-outline"></ion-icon>
                                         </div>
@@ -399,15 +457,15 @@
                 <section class="thanks" id="thanks">
                     <div class="container">
                         <div class="thanks__content">
-                            <h2 class="section-heading">
+                            <h2 class="section-heading fade-up">
                                 Thank you !!!
                             </h2>
-                            <p class="section-description">
+                            <p class="section-description fade-up">
                                 It's quite long, isn't it?
                                 <br>Thanks for taking your time to visit my website.
                             </p>
                             <p>Have a nice day</p>
-                            <img src="./images/heart.svg" alt="heart">
+                            <img class="fade-up" src="./images/heart.svg" alt="heart">
                         </div>
                     </div>
                 </section>

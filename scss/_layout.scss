@@ -11,12 +11,18 @@ body {
 
 .hide {
   scroll-behavior: smooth;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: absolute;
   top: 0px;
   left: 0px;
   bottom: 0px;
   right: -17px;
+
+  // responsive
+  @include responsiveForXSmall {
+    right: 0;
+  }
 }
 
 //////////////////////
@@ -27,10 +33,31 @@ body {
   margin: auto;
 }
 .container {
-  width: 1070px;
-  max-width: 100%;
+  width: 100%;
   padding: 0 15px;
   margin: auto;
+
+  // responsive
+  @include responsiveForXLarge {
+    & {
+      max-width: 1140px;
+      padding: 0 70px;
+    }
+  }
+
+  @include responsiveForLarge {
+    & {
+      max-width: 960px;
+      padding: 0 70px;
+    }
+  }
+
+  @include responsiveForMedium {
+    & {
+      max-width: 100%;
+      padding: 0 15px;
+    }
+  }
 }
 
 .row {
@@ -54,7 +81,8 @@ body {
   background-position: center;
   background-attachment: fixed;
 
-  padding: 12rem 0;
+  position: relative;
+  padding: 14rem 0;
 
   &__right {
     @include center;
@@ -93,6 +121,27 @@ body {
     }
   }
 
+  &__btn {
+    position: absolute;
+    bottom: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    color: var(--blue-color);
+    font-size: 3.5rem;
+
+    animation: moveUp 0.5s alternate infinite;
+
+    ion-icon:nth-child(1) {
+      position: absolute;
+      bottom: 1rem;
+    }
+  }
+
   /*header responsive*/
 
   @include responsiveForSmall {
@@ -115,6 +164,11 @@ body {
   &__text {
     padding-right: 15px;
 
+    .section-heading {
+      text-transform: capitalize;
+      text-align: left;
+    }
+
     .btn {
       margin-top: 1.5rem;
     }
@@ -132,6 +186,10 @@ body {
       padding-right: 0;
       max-width: 75%;
       margin-bottom: 5rem;
+
+      .section-heading {
+        text-align: center;
+      }
     }
 
     &__img {
@@ -176,10 +234,45 @@ body {
     }
   }
 
+  &__info {
+    background: var(--white-color);
+    padding: 3rem 2rem;
+    margin-top: 7rem;
+    box-shadow: 0 5px 5px -5px var(--black-opacity);
+    border-radius: 5px;
+  }
+
+  &__list {
+    width: 50%;
+
+    li {
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      color: var(--black-opacity);
+      text-transform: capitalize;
+
+      span {
+        font-weight: var(--fw-boldest);
+        color: var(--black-color);
+        margin: 0 1rem;
+      }
+
+      ion-icon {
+        vertical-align: middle;
+        font-size: 3rem;
+        color: var(--blue-color);
+      }
+    }
+  }
+
   /*greeting responsive*/
   @include responsiveForSmall {
     &__content {
       max-width: 75%;
+    }
+
+    &__list {
+      width: 100%;
     }
   }
 }
@@ -191,7 +284,7 @@ body {
   }
 
   &__notification {
-    font-size: 12px;
+    font-size: 1.2rem;
   }
 
   img {
@@ -207,6 +300,7 @@ body {
   }
 
   /*tech responsive*/
+
   @include responsiveForSmall {
     &__left {
       margin-bottom: 5rem;
@@ -214,12 +308,13 @@ body {
 
     &__pgbars {
       .pgbar {
+        width: 100%;
         margin: 1.25rem auto;
       }
     }
 
     img {
-      width: 65%;
+      display: none;
     }
   }
 }
@@ -258,7 +353,7 @@ body {
     top: 0;
     left: 50%;
 
-    width: 25rem;
+    width: 30rem;
     height: 100%;
 
     transition: transform 1s;
@@ -295,15 +390,10 @@ body {
   }
 
   /*other responsive*/
-  @include responsiveForXSmall {
-    &__gallery {
-      grid-template-columns: 1fr;
-    }
-
-    &__item {
-      img {
-        width: 25rem;
-      }
+  @include responsiveForSmall {
+    &__img,
+    &__details {
+      width: 25rem;
     }
   }
 }
@@ -350,10 +440,44 @@ body {
       transition: transform 0.5s, background 0.7s;
 
       h3 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 500;
         text-transform: capitalize;
-        margin-bottom: 6rem;
+        margin-bottom: 10%;
+      }
+    }
+  }
+
+  // responsive
+
+  @include responsiveForSmall {
+    &__item {
+    }
+
+    &__img {
+      figcaption {
+        padding-top: 3rem;
+
+        h3 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  @include responsiveForXSmall {
+    &__item {
+      padding: 3rem 0;
+      width: 100%;
+    }
+
+    &__img {
+      figcaption {
+        padding-top: 10rem;
+
+        h3 {
+          font-size: 3rem;
+        }
       }
     }
   }
@@ -365,16 +489,25 @@ body {
     text-align: center;
   }
 
-  img {
-    width: 100%;
-  }
-
   &__right {
-    @include center;
+    padding-top: 8rem;
   }
 
   &__details {
-    text-align: center;
+    text-align: left;
+    margin-left: auto;
+    width: max-content;
+  }
+
+  &__text {
+    h3 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      font-weight: var(--fw-bold);
+      color: var(--black-color);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
 
     p {
       margin-bottom: 1.5rem;
@@ -382,28 +515,79 @@ body {
   }
 
   &__btns {
-    a {
+    .btn {
       margin: 0 1rem;
+
+      ion-icon {
+        font-size: 2.5rem;
+        vertical-align: middle;
+      }
     }
-    ion-icon {
-      font-size: 2.5rem;
-      vertical-align: middle;
+
+    .btn:first-child {
+      margin-left: 0;
     }
   }
 
-  /*contact responsive*/
-  @include responsiveForSmall {
-    img {
-      width: 65%;
+  @include responsiveForXLarge {
+    & {
+      .container {
+        padding: 0 70px;
+      }
+    }
+  }
+
+  @include responsiveForLarge {
+    & {
+      .container {
+        padding: 0 70px;
+      }
+    }
+  }
+
+  @include responsiveForMedium {
+    & {
+      .container {
+        padding: 0 15px;
+      }
+    }
+
+    &__right {
+      order: 0;
+      width: 100%;
+      padding-top: 5rem;
+      margin-bottom: 3rem;
+    }
+
+    &__details {
+      width: 100%;
+      text-align: center;
+    }
+
+    &__left {
+      order: 1;
+      width: 100%;
+
+      .form {
+        width: 80%;
+        margin: auto;
+
+        &__btn {
+          text-align: center;
+        }
+      }
     }
   }
 }
 
-/* CONTACT SECTION CSS */
+/* THANK SECTION CSS */
 
 .thanks {
   background: url(../images/bg.svg) no-repeat;
   background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
+
   &__content {
     max-width: 500px;
     margin: auto;
