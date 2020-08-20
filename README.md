@@ -1,7 +1,7 @@
 <h1>CV</h1>
-Một trang CV dưới dạng Single Page Website
+My personal Website
 
-- Công nghệ: HTML5, CSS3, JavaScript
-- Không thư viện/Framework
+- Technologies: HTML5, CSS3(SCSS), JavaScript
+- NO framework or library
 - Demo: https://hungxu97.github.io/myCv2/
-- Nguồn ảnh: IRA Design, Undraw
+- Images by: undraw.co, iradesign.io
